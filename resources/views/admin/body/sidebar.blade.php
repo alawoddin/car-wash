@@ -49,7 +49,7 @@
                     <a href="{{route('all.slider')}}" class="tp-link">All Slider</a>
                 </li>
                 <li>
-                    <a href="auth-register.html" class="tp-link">Register</a>
+                    <a href="{{route('all.office')}}" class="tp-link">Office</a>
                 </li>
                     
             </ul>

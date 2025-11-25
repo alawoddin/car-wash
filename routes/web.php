@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Backend\OfficeController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\googlecontroller;
 use App\Http\Controllers\ProfileController;
@@ -49,6 +50,15 @@ Route::controller(SliderController::class)->group(function(){
     Route::post('/update/slider', 'UpdateSlider')->name('update.slider');
     Route::get('/delete/slider/{id}', 'DeleteSlider')->name('delete.slider');
 
+});
+
+Route::controller(OfficeController::class)->group(function(){
+    Route::get('/all/office', 'AllOffice')->name('all.office');
+    Route::get('/add/office', 'AddOffice')->name('add.office');
+    Route::post('/store/office', 'StoreOffice')->name('store.office');
+    Route::get('/edit/office/{id}', 'EditOffice')->name('edit.office');
+    Route::post('/update/office', 'UpdateOffice')->name('update.office');
+    Route::get('/delete/office/{id}', 'DeleteOffice')->name('delete.office');
 });
 
  
