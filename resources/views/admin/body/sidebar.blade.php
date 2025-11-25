@@ -40,13 +40,13 @@
     <li>
         <a href="#sidebarAuth" data-bs-toggle="collapse">
             <i data-feather="users"></i>
-            <span> Authentication </span>
+            <span> All Page </span>
             <span class="menu-arrow"></span>
         </a>
         <div class="collapse" id="sidebarAuth">
             <ul class="nav-second-level">
                 <li>
-                    <a href="auth-login.html" class="tp-link">Log In</a>
+                    <a href="{{route('all.slider')}}" class="tp-link">All Slider</a>
                 </li>
                 <li>
                     <a href="auth-register.html" class="tp-link">Register</a>
