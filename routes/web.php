@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\OfficeController;
+use App\Http\Controllers\Backend\PriceController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\googlecontroller;
 use App\Http\Controllers\ProfileController;
@@ -59,6 +60,16 @@ Route::controller(OfficeController::class)->group(function(){
     Route::get('/edit/office/{id}', 'EditOffice')->name('edit.office');
     Route::post('/update/office', 'UpdateOffice')->name('update.office');
     Route::get('/delete/office/{id}', 'DeleteOffice')->name('delete.office');
+});
+
+Route::controller(PriceController::class)->group(function() {
+    Route::get('/all/price', 'AllPrice')->name('all.price');
+    Route::get('/add/price', 'AddPrice')->name('add.price');
+    Route::post('/store/price', 'StorePrice')->name('store.price');
+    Route::get('/edit/price/{id}', 'EditPrice')->name('edit.price');
+    Route::post('/update/price', 'UpdatePrice')->name('update.price');
+    Route::get('/delete/price/{id}', 'DeletePrice')->name('delete.price');
+
 });
 
 

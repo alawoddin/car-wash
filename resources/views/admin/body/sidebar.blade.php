@@ -51,6 +51,9 @@
                 <li>
                     <a href="{{route('all.office')}}" class="tp-link">Office</a>
                 </li>
+                  <li>
+                    <a href="{{route('all.price')}}" class="tp-link">Price</a>
+                </li>
                     
             </ul>
         </div>
