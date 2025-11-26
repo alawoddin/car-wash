@@ -1,7 +1,6 @@
 @extends('admin.admin_master')
 @section('admin')
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <div class="content">
 
@@ -10,13 +9,13 @@
 
             <div class="py-3 d-flex align-items-sm-center flex-sm-row flex-column">
                 <div class="flex-grow-1">
-                    <h4 class="fs-18 fw-semibold m-0">Add Office</h4>
+                    <h4 class="fs-18 fw-semibold m-0">Edit Office</h4>
                 </div>
 
                 <div class="text-end">
                     <ol class="breadcrumb m-0 py-0">
 
-                        <li class="breadcrumb-item active">Add Office</li>
+                        <li class="breadcrumb-item active">Edit Office</li>
                     </ol>
                 </div>
             </div>
@@ -26,31 +25,31 @@
                 <div class="col-xl-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="card-title mb-0">Add Office</h5>
+                            <h5 class="card-title mb-0">Edit Office</h5>
                         </div><!-- end card header -->
 
                         <div class="card-body">
-                            <form  action="{{ route('store.office') }}" method="POST" enctype="multipart/form-data" id="myForm"
+                            <form action="{{ route('update.office') }}" method="POST" enctype="multipart/form-data"
                                 class="row g-3">
                                 @csrf
 
-                                <div class="form-group col-md-6">
-                                    <label  for="validationDefault01" class="form-label">Office Name</label>
-                                    <input   type="text" class="form-control" name="name">
+                                <input type="hidden" name="id" value="{{$office->id}}">
+                                <div class="col-md-6">
+                                    <label for="validationDefault01" class="form-label">Office Name</label>
+                                    <input type="text" class="form-control" name="name" value="{{$office->name}}">
                                 </div>
-
                                   <div class="col-md-6">
                                     <label for="validationDefault02" class="form-label">Description</label>
-                                    <textarea class="form-control" name="description" rows="3"></textarea>
+                                    <textarea class="form-control" name="description" rows="3">{{$office->description}}</textarea>
                                 </div>
-                                <div class="form-group col-md-6">
+                                <div class="col-md-6">
                                     <label for="validationDefault02" class="form-label">Office Image</label>
                                     <input type="file" class="form-control" name="image" id="image">
                                 </div>
 
-                                <div class="form-group col-md-6">
+                                <div class="col-md-6">
                                     <label for="validationDefault02" class="form-label"> </label>
-                                    <img id="showImage" src="{{ url('upload/no_image.jpg') }}"
+                                    <img id="showImage" src="{{ asset($office->image) }}"
                                         class="rounded-circle avatar-xl img-thumbnail float-start" alt="image profile">
                                 </div>
 
@@ -73,7 +72,6 @@
 
 
 
-
     <script type="text/javascript">
         $(document).ready(function() {
             $('#image').change(function(e) {
@@ -85,45 +83,4 @@
             })
         })
     </script>
-
-    <script type="text/javascript">
-    $(document).ready(function (){
-        $('#myForm').validate({
-            rules: {
-                name: {
-                    required : true,
-                },
-                description: {
-                    required : true,
-                },
-                
-            },
-            messages :{
-                name: {
-                    required : 'Please Enter name',
-                },
-                description: {
-                    required : 'Please Enter description',
-                },
-                
-                 
-
-            },
-            errorElement : 'span', 
-            errorPlacement: function (error,element) {
-                error.addClass('invalid-feedback');
-                element.closest('.form-group').append(error);
-            },
-            highlight : function(element, errorClass, validClass){
-                $(element).addClass('is-invalid');
-            },
-            unhighlight : function(element, errorClass, validClass){
-                $(element).removeClass('is-invalid');
-            },
-        });
-    });
-    
-</script>
-
-
 @endsection

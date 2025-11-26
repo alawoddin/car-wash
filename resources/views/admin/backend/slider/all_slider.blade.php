@@ -41,7 +41,7 @@
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
                                             <td>{{ $item->title }}</td>
-                                            <td>{{ $item->description }}</td>
+                                            <td>{{ Str::limit($item->description, 50,'...') }}</td>
                                             </td>
                                             <td>
                                                 <a href="{{ route('edit.slider', $item->id) }}"

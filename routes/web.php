@@ -61,5 +61,5 @@ Route::controller(OfficeController::class)->group(function(){
     Route::get('/delete/office/{id}', 'DeleteOffice')->name('delete.office');
 });
 
- 
+
 });
