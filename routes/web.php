@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\OfficeController;
 use App\Http\Controllers\Backend\PriceController;
 use App\Http\Controllers\Backend\SliderController;
+use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\googlecontroller;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -70,6 +71,15 @@ Route::controller(PriceController::class)->group(function() {
     Route::post('/update/price', 'UpdatePrice')->name('update.price');
     Route::get('/delete/price/{id}', 'DeletePrice')->name('delete.price');
 
+});
+
+Route::controller(TestimonialController::class)->group(function() {
+    Route::get('/all/testimonial', 'AllTestimonial')->name('all.testimonial');
+    Route::get('/add/testimonial', 'AddTestimonial')->name('add.testimonial');
+    Route::post('/store/testimonial', 'StoreTestimonial')->name('store.testimonial');
+    Route::get('/edit/testimonial/{id}', 'EditTestimonial')->name('edit.testimonial');
+    Route::post('/update/testimonial', 'UpdateTestimonial')->name('update.testimonial');
+    Route::get('/delete/testimonial/{id}', 'DeleteTestimonial')->name('delete.testimonial');
 });
 
 
