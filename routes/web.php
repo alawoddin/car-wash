@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\OfficeController;
 use App\Http\Controllers\Backend\PriceController;
+use App\Http\Controllers\Backend\ServicesController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\googlecontroller;
@@ -82,5 +83,13 @@ Route::controller(TestimonialController::class)->group(function() {
     Route::get('/delete/testimonial/{id}', 'DeleteTestimonial')->name('delete.testimonial');
 });
 
+Route::controller(ServicesController::class)->group(function() {
+    Route::get('/all/services', 'AllServices')->name('all.services');
+    Route::get('/add/services', 'AddServices')->name('add.services');
+    Route::post('/store/services', 'StoreServices')->name('store.services');
+    Route::get('/edit/services/{id}', 'EditServices')->name('edit.services');
+    Route::post('/update/services', 'UpdateServices')->name('update.services');
+    Route::get('/delete/services/{id}', 'DeleteServices')->name('delete.services');
+});
 
 });
