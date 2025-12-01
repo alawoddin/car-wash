@@ -62,6 +62,10 @@
                 <li>
                     <a href="{{route('all.services')}}" class="tp-link">Services</a>
                 </li>
+
+                 <li>
+                    <a href="{{route('all.video')}}" class="tp-link">Video</a>
+                </li>
                     
             </ul>
         </div>

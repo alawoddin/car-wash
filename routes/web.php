@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\PriceController;
 use App\Http\Controllers\Backend\ServicesController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\TestimonialController;
+use App\Http\Controllers\Backend\VideoController;
 use App\Http\Controllers\googlecontroller;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -90,6 +91,16 @@ Route::controller(ServicesController::class)->group(function() {
     Route::get('/edit/services/{id}', 'EditServices')->name('edit.services');
     Route::post('/update/services', 'UpdateServices')->name('update.services');
     Route::get('/delete/services/{id}', 'DeleteServices')->name('delete.services');
+});
+
+Route::controller(VideoController::class)->group(function() {
+    Route::get('/all/video', 'AllVideo')->name('all.video');
+    Route::get('/add/video', 'AddVideo')->name('add.video');
+    Route::post('/store/video', 'StoreVideo')->name('store.video');
+    Route::get('/edit/video/{id}', 'EditVideo')->name('edit.video');
+    Route::post('/update/video', 'UpdateVideo')->name('update.video');
+    Route::get('/delete/video/{id}', 'DeleteVideo')->name('delete.video');
+
 });
 
 });
